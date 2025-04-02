@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="fill this out.">
+    <meta name="keywords" content="fill, this, out">
+    <meta name="author" content="companyName">
+    <title>Job application form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <p>
+            <label for="referenceNumber">Job Reference Number: </label> 
+            <select name="referenceNumber" id="referenceNumber" required>
+                <option value="">Please Select</option>
+                <option value="G01-SD-2025-001">G01-SD-2025-001</option>
+                <option value="G01-??-2025-002">G01-??-2025-002</option>
+            </select>
+        </p>
+        <p>
+            <label for="firstName">First Name: </label> 
+            <input type="text" name="firstName" id="firstName" maxlength="20" size="20" pattern="[A-Za-z]+" title="Only letters are allowed" required>
+        </p>
+        <p>
+            <label for="lastName">Last Name: </label> 
+            <input type="text" name="lastName" id="lastName" maxlength="20" size="20" pattern="[A-Za-z]+" title="Only letters are allowed" required>  
+        <p>
+        <p>
+            <label for="dateOfBirth">Date of Birth: </label> 
+            <input type="text" id="dateOfBirth" name="dateOfBirth" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="dd/mm/yyyy" required>
+        </p>
+
+        <fieldset id="genderFieldset">
+            <legend>Gender</legend>
+
+            <input type="radio" id="boy" name="gender" value="boy" required checked>
+            <label for="boy">Boy</label> 
+
+            <input type="radio" id="girl" name="gender" value="girl">
+            <label for="girl">Girl</label> 
+
+            <input type="radio" id="nonBinary" name="gender" value="nonBinary">
+            <label for="nonBinary">Non-Binary</label> 
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label> 
+        </fieldset>
+        
+        <p>
+            <label for="streetAddress">Street Address: </label> 
+            <input type="text" name="streetAddress" maxlength="40" size="40" required>
+        </p>
+        <p>
+            <label for="suburb">Suburb/Town: </label> 
+            <input type="text" name="suburb" maxlength="40" size="40" required>
+        </p>
+        <p>
+            <label for="state">State: </label> 
+            <select name="state" id="state" required>
+                <option value="">Please Select</option>
+                <option value="vic">VIC</option>
+                <option value="nsw">NSW</option>
+                <option value="qld">QLD</option>
+                <option value="nt">NT</option>  
+                <option value="wa">WA</option>
+                <option value="sa">SA</option>
+                <option value="tas">TAS</option>
+                <option value="act">ACT</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="postcode">Postcode: </label> 
+            <input type="text" name="postcode" maxlength="4" pattern="\d{4}" title="Must be 4 digits" required>
+        </p>
+
+        <p>
+            <!-- Pattern: 
+            '\S+' = one or more Non-Whitespace Character (NWC)
+            so 'NWC@NWC.NWC'
+            -->
+            <label for="email">Email Address: </label> 
+            <input type="text" name="email" pattern="^\S+@\S+\.\S+$" title="Must be a valid email (e.g., user123@example.co.uk)" required> 
+        </p>
+
+        <p>
+            <label for="phoneNumber">Phone Number: </label>
+            <input type="text" name="phoneNumber" pattern="[0-9\s]{8,12}" maxlength="15" title="Must be 8 to 12 digits (e.g., 123 456 7890)" required>
+        </p>
+
+        <br>
+        <hr>
+        <!-- I assume "required technical" meant skills that are required? And the user unselects the ones they dont have -->
+        <p name="requiredTechnical">
+            <label for="requiredTechnical">Required Technical Skills: </label>
+            <br>
+            <br>
+            <input type="checkbox" id="cbox1" value="cbox1" name="requiredTechnical[]" checked>
+            <label for="cbox1">cbox1</label> 
+
+            <input type="checkbox" id="cbox2" value="cbox2" name="requiredTechnical[]" checked>
+            <label for="cbox2">cbox2</label> 
+
+            <input type="checkbox" id="cbox3" value="cbox3" name="requiredTechnical[]" checked>
+            <label for="cbox3">cbox3</label> 
+        </p>
+
+        <br>
+        <p>
+            <label for="otherSkills">Other Skills</label>
+            <br>
+            <textarea id="otherSkills" name="otherSkills" rows="10" cols="50" placeholder="Tell us about your skills..."></textarea>
+        </p>
+        <p>
+            <button type="submit">Apply</button>
+        </p>
+    </form>
+</body>
+</html>
