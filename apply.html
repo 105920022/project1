@@ -14,8 +14,8 @@
             <label for="refNum">Job Reference Number: </label> 
             <select name="refNum" id="refNum" required>
                 <option value="">Please Select</option>
-                <option value="sd001">SD-001</option> 
-                <option value="smm002">SMM-002</option>
+                <option value="sd001">SD001</option> 
+                <option value="smm02">SMM02</option>
             </select>
         </p>
         <p>
@@ -28,17 +28,18 @@
         <p>
         <p>
             <label for="dob">Date of Birth: </label> 
-            <input type="text" id="dob" name="dateOfBirth" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="dd/mm/yyyy" required>
+            <!-- regex copied from https://arziel1992.github.io/input-pattern-tester (as listed in module 3) -->
+            <input type="text" id="dob" name="dateOfBirth" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\d{4}" placeholder="dd/mm/yyyy" required>
         </p>
 
-        <fieldset id="genderFieldset">
+        <fieldset>
             <legend>Gender</legend>
 
             <input type="radio" id="boy" name="gender" value="boy" required checked>
             <label for="boy">Boy</label> 
 
             <input type="radio" id="girl" name="gender" value="girl">
-            <label for="girl">Girl</label> 
+            <label for="girl">Girl</label>
 
             <input type="radio" id="nonBinary" name="gender" value="nonBinary">
             <label for="nonBinary">Non-Binary</label> 
@@ -76,12 +77,9 @@
         </p>
 
         <p>
-            <!-- Pattern: 
-            '\S+' = one or more Non-Whitespace Character (NWC)
-            so 'NWC@NWC.NWC'
-            -->
             <label for="email">Email Address: </label> 
-            <input type="text" name="email" pattern="^\S+@\S+\.\S+$" title="Must be a valid email (e.g., user123@example.co.uk)" required> 
+            <!-- regex copied from https://arziel1992.github.io/input-pattern-tester (as listed in module 3) -->
+            <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be a valid email (e.g., user123@example.co.uk)" required> 
         </p>
 
         <p>
