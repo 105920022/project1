@@ -7,15 +7,19 @@
     <meta name="author" content="Grojband">
     <title>Job application form</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/apply.css">
 </head>
 <body> 
     <header>
         <a href="index.html"><img id="Logo" src="styles/images/GrojBand.png" alt="GrojBand Logo"></a>
-        <a class="NavButton" href="index.html">Home</a>
-        <a class="NavButton" href="about.html">About</a>
-        <a class="NavButton" href="jobs.html">Jobs</a>
-        <a class="NavButton" href="apply.html">Apply</a>
+        <nav>
+            <a class="NavButton" href="index.html">Home</a>
+            <a class="NavButton" href="about.html">About</a>
+            <a class="NavButton" href="jobs.html">Jobs</a>
+            <a class="NavButton" href="apply.html">Apply</a>
+        </nav>
     </header>
+
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
         <p>
             <label for="refNum">Job Reference Number: </label> 
@@ -39,7 +43,7 @@
             <input type="text" id="dob" name="dateOfBirth" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\d{4}" placeholder="dd/mm/yyyy" required>
         </p>
 
-        <fieldset>
+        <fieldset id="genderFieldset">
             <legend>Gender</legend>
 
             <input type="radio" id="boy" name="gender" value="boy" required checked>
@@ -94,38 +98,21 @@
             <input type="text" name="phone" pattern="[0-9\s]{8,12}" maxlength="15" title="Must be 8 to 12 digits (e.g., 123 456 7890)" required>
         </p>
 
-        <br>
-        <hr>
         <!-- I assume "required technical" meant skills that are required? For all open jobs? And the user unselects the ones they dont have? -->
         <p name="requiredTechnical">
             <label for="requiredTechnical">Required Technical Skills: </label>
             <br>
             <br>
-            <input type="checkbox" id="cpp" value="cpp" name="requiredTechnical[]" checked>
-            <label for="cpp">C++</label> 
-
-            <input type="checkbox" id="html" value="html" name="requiredTechnical[]" checked>
-            <label for="html">HTML</label> 
-
-            <input type="checkbox" id="css" value="css" name="requiredTechnical[]" checked>
-            <label for="css">CSS</label> 
-            
-            <input type="checkbox" id="js" value="js" name="requiredTechnical[]" checked>
-            <label for="js">JavaScript</label> 
-
-            <input type="checkbox" id="mysql" value="mysql" name="requiredTechnical[]" checked>
-            <label for="mysql">MySQL</label> 
-            
-            <input type="checkbox" id="ps" value="ps" name="requiredTechnical[]" checked>
-            <label for="ps">Photoshop</label>
-                        
-            <input type="checkbox" id="ga" value="ga" name="requiredTechnical[]" checked>
-            <label for="ga">Google Analytics</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="cpp" checked> C++</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="html" checked> HTML</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="css" checked> CSS</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="js" checked> JavaScript</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="mysql" checked> MySQL</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="ps" checked> Photoshop</label>
+            <label><input type="checkbox" name="requiredTechnical[]" value="ga" checked> Google Analytics</label>
         </p>
-
-        <br>
         <p>
-            <label for="otherSkills">Other Skills</label>
+            <label for="otherSkills">Other Skills:</label>
             <br>
             <textarea id="otherSkills" name="otherSkills" rows="10" cols="50" placeholder="Tell us about your skills..."></textarea>
         </p>
@@ -133,11 +120,11 @@
             <button type="submit">Apply</button>
         </p>
     </form>
+    <hr>
     <footer>
-        <hr>
+        <p>&copy; GrojBand</p>
         <a href="mailto:grojbandwebtech@gmail.com">Contact Us!</a>
         <a href="grojbandwebtech.atlassian.net">Our Jira Page</a>
-        <p id="Copyright">&#169GrojBand</p>
     </footer>
 </body>
 </html>
