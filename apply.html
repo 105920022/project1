@@ -7,10 +7,10 @@
     <meta name="author" content="Grojband">
     <title>Job application form</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/apply.css">
 </head>
 <body> 
     <header>
-        <!-- https://www.canva.com/ai-logo-generator/ prompt: generate a simple company logo for a music composing software called GROJBAND -->
         <a href="index.html"><img id="Logo" src="images/GrojBand.png" alt="GrojBand Logo"></a>
         <nav>
             <a class="NavButton" href="index.html">Home</a>
@@ -19,6 +19,7 @@
             <a class="NavButton" href="apply.html">Apply</a>
         </nav>
     </header>
+    <h1 id="jobApplicationTitle">Position Application</h1>
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
         <p>
             <label for="refNum">Job Reference Number: </label> 
@@ -42,29 +43,29 @@
             <input type="text" id="dob" name="dateOfBirth" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/\d{4}" placeholder="dd/mm/yyyy" required>
         </p>
 
-        <fieldset>
+        <fieldset id="genderFieldset">
             <legend>Gender</legend>
 
-            <input type="radio" id="boy" name="gender" value="boy" required checked>
-            <label for="boy">Boy</label> 
+            <input type="radio" id="boy" name="gender" class="gender" value="boy" required checked>
+            <label for="boy" class="gender">Boy</label> 
 
-            <input type="radio" id="girl" name="gender" value="girl">
-            <label for="girl">Girl</label>
+            <input type="radio" id="girl" name="gender" class="gender" value="girl">
+            <label for="girl" class="gender">Girl</label>
 
-            <input type="radio" id="nonBinary" name="gender" value="nonBinary">
-            <label for="nonBinary">Non-Binary</label> 
+            <input type="radio" id="nonBinary" name="gender" class="gender" value="nonBinary">
+            <label for="nonBinary" class="gender">Non-Binary</label> 
 
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label> 
+            <input type="radio" id="other" name="gender" class="gender" value="other">
+            <label for="other" class="gender">Other</label> 
         </fieldset>
         
         <p>
             <label for="address">Street Address: </label> 
-            <input type="text" name="address" maxlength="40" size="40" required>
-        </p>
+            <input type="text" id="address" name="address" maxlength="40" size="40" required>
+        </p>        
         <p>
             <label for="suburb">Suburb/Town: </label> 
-            <input type="text" name="suburb" maxlength="40" size="40" required>
+            <input type="text" name="suburb" id="suburb" maxlength="40" size="40" required>
         </p>
         <p>
             <label for="state">State: </label> 
@@ -83,52 +84,33 @@
 
         <p>
             <label for="zip">Postcode: </label> 
-            <input type="text" name="zip" maxlength="4" pattern="\d{4}" title="Must be 4 digits" required>
+            <input type="text" name="zip" id="zip" maxlength="4" pattern="\d{4}" title="Must be 4 digits" required>
         </p>
 
         <p>
             <label for="email">Email Address: </label> 
             <!-- regex copied from https://arziel1992.github.io/input-pattern-tester (as listed in module 3) -->
-            <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be a valid email (e.g., user123@example.co.uk)" required> 
+            <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be a valid email (e.g., user123@example.co.uk)" required> 
         </p>
 
         <p>
             <label for="phone">Phone Number: </label>
-            <input type="text" name="phone" pattern="[0-9\s]{8,12}" maxlength="15" title="Must be 8 to 12 digits (e.g., 123 456 7890)" required>
+            <input type="text" name="phone" id="phone" pattern="[0-9\s]{8,12}" maxlength="15" title="Must be 8 to 12 digits (e.g., 123 456 7890)" required>
         </p>
 
-        <br>
-        <hr>
         <!-- I assume "required technical" meant skills that are required? For all open jobs? And the user unselects the ones they dont have? -->
-        <p name="requiredTechnical">
-            <label for="requiredTechnical">Required Technical Skills: </label>
-            <br>
-            <br>
-            <input type="checkbox" id="cpp" value="cpp" name="requiredTechnical[]" checked>
-            <label for="cpp">C++</label> 
-
-            <input type="checkbox" id="html" value="html" name="requiredTechnical[]" checked>
-            <label for="html">HTML</label> 
-
-            <input type="checkbox" id="css" value="css" name="requiredTechnical[]" checked>
-            <label for="css">CSS</label> 
-            
-            <input type="checkbox" id="js" value="js" name="requiredTechnical[]" checked>
-            <label for="js">JavaScript</label> 
-
-            <input type="checkbox" id="mysql" value="mysql" name="requiredTechnical[]" checked>
-            <label for="mysql">MySQL</label> 
-            
-            <input type="checkbox" id="ps" value="ps" name="requiredTechnical[]" checked>
-            <label for="ps">Photoshop</label>
-                        
-            <input type="checkbox" id="ga" value="ga" name="requiredTechnical[]" checked>
-            <label for="ga">Google Analytics</label>
-        </p>
-
-        <br>
         <p>
-            <label for="otherSkills">Other Skills</label>
+            <label>Required Technical Skills: </label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="cpp" checked> C++</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="html" checked> HTML</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="css" checked> CSS</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="js" checked> JavaScript</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="mysql" checked> MySQL</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="ps" checked> Photoshop</label>
+            <label><input type="checkbox" class="requiredTechnical" name="requiredTechnical[]" value="ga" checked> Google Analytics</label>
+        </p>
+        <p>
+            <label for="otherSkills">Other Skills:</label>
             <br>
             <textarea id="otherSkills" name="otherSkills" rows="10" cols="50" placeholder="Tell us about your skills..."></textarea>
         </p>
