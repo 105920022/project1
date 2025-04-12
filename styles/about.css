@@ -1,0 +1,71 @@
+/*
+    filename: about.css
+author: Tom
+created: 09/04/2025
+description: CSS file for About Form text information
+*/
+
+.student-id {
+    font-size: 24px;;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.student-list {
+    font-size: 24px;
+    text-align: right;
+
+}
+
+.memb-interest {
+    font-size: 24px;
+    text-align: center;
+}
+
+.interest-table {
+    font-size: 24px;
+    text-align: center;
+    margin: auto; /* Centers the table horizontally */
+    border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.interest-table th, .interest-table td {
+    border: 1px solid black; /* Adds a border to table cells */
+    padding: 10px; /* Adds padding inside the cells */
+}
+
+caption {
+    font-size: 24px;
+    text-align: center;
+}
+
+tr {
+    font-size: 24px;
+    text-align: center;
+}
+
+th {
+    font-size: 24px;
+    text-align: center;
+}
+
+.memb-interest-section {
+    font-size: 24px;
+    text-align: center;
+}
+
+td, th {
+    font-size: 24px;
+    text-align: center;
+    padding-left: 60px;
+}
+
+.member-cont {
+    font-size: 24px;
+    padding-left: 60px;
+}
+
+.contribution-list {
+    font-size: 24px;
+    padding-left: 60px;
+}
