@@ -40,6 +40,7 @@
 .interest-table td {
     background-color: #e6f7ff; /* Adds a light blue background to table cells */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 30%; /* Sets width for table cells */
 }
 
 .interest-table th, .interest-table td {
@@ -114,3 +115,4 @@ figure img {
     flex: 1; /* Takes up equal space */
     text-align: center; /* Centers the content */
 }
+
