@@ -75,6 +75,7 @@ aside {
 
 footer {
     text-align: center;
+    clear: right;
 }
 
 footer a {
