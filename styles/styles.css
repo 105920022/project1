@@ -11,6 +11,7 @@ description: Main CSS file for universal text information
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Logo, which appears in the header of every page */
 #Logo {
     width: 20%;
 }
@@ -23,6 +24,7 @@ header {
     padding: 10px 20px;
 }
 
+/* Navigation buttons, which appear in the header of every page */
 .NavButton {
     padding: 10px 20px;
     background-color: #0099ff;
@@ -67,6 +69,7 @@ aside {
     box-sizing: border-box;
 }
 
+/* Copyright logo */
 #Copyright {
     font-size: 19px;
     text-align: right;
